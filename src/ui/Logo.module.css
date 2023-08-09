@@ -1,0 +1,7 @@
+.logo img {
+  display: block;
+  height: 12rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  object-fit: contain;
+}

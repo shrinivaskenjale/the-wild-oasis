@@ -1,0 +1,9 @@
+.main {
+  padding: 4rem 4.8rem 6.4rem;
+  overflow: auto;
+  background: var(--color-grey-50);
+  /* display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start; */
+}

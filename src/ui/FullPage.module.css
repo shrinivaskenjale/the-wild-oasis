@@ -1,0 +1,7 @@
+.fullPage {
+  height: 100dvh;
+  background-color: var(--color-gray-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

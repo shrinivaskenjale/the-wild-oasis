@@ -1,0 +1,9 @@
+.salesChart {
+  grid-column: 1 / -1;
+}
+
+/* Hack to change grid line colors */
+.salesChart .recharts-cartesian-grid-horizontal line,
+.salesChart .recharts-cartesian-grid-vertical line {
+  stroke: var(--color-grey-300);
+}

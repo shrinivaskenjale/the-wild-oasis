@@ -1,0 +1,15 @@
+.appLayout {
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 23rem 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 120rem;
+  display: flex;
+  display: flex;
+  flex-flow: column;
+  gap: 3.2rem;
+}
