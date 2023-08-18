@@ -2,9 +2,9 @@
 
 https://the-wild-oasis-eta.vercel.app/
 
-Use following credentials to log in:
-Email: **user@test.com**
-password: **test1234**
+Use following credentials to log in:  
+Email: **user@test.com**  
+Password: **test1234**
 
 # Description
 
