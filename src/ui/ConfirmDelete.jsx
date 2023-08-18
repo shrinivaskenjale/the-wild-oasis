@@ -1,7 +1,7 @@
 import Button from "./Button";
 import styles from "./ConfirmDelete.module.css";
 
-function ConfirmDelete({ resourceName, onConfirm, disabled, onClose }) {
+const ConfirmDelete = ({ resourceName, onConfirm, disabled, onClose }) => {
   return (
     <div className={styles.confirmDelete}>
       <h1>Delete {resourceName}</h1>
@@ -20,6 +20,6 @@ function ConfirmDelete({ resourceName, onConfirm, disabled, onClose }) {
       </div>
     </div>
   );
-}
+};
 
 export default ConfirmDelete;

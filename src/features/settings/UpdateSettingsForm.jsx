@@ -6,7 +6,7 @@ import { useSettings } from "./useSettings";
 import { useUpdateSetting } from "./useUpdateSetting";
 import Input from "../../ui/Input";
 
-function UpdateSettingsForm() {
+const UpdateSettingsForm = () => {
   const {
     settings: {
       minBookingLength,
@@ -21,14 +21,15 @@ function UpdateSettingsForm() {
   // return <Spinner />;
   if (isLoading) return <Spinner />;
 
-  function handleBlur(e, field) {
+  const handleBlur = (e, field) => {
     const { value } = e.target;
 
     if (!value) return;
     updateSetting({ [field]: value });
-  }
+  };
 
-  // This time we are using UNCONTROLLED fields, so we will NOT store state
+  // This time we are using UNCONTROLLED fields, so we will NOT store state.
+  // Setting will be updated when input loses focus.
   return (
     <Form>
       <FormRow label="Minimum nights/booking">
@@ -69,6 +70,6 @@ function UpdateSettingsForm() {
       </FormRow>
     </Form>
   );
-}
+};
 
 export default UpdateSettingsForm;

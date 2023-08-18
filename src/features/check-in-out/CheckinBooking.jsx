@@ -18,7 +18,7 @@ import { useCheckin } from "./useCheckin";
 // import { id } from "date-fns/locale";
 import { useSettings } from "../settings/useSettings";
 
-function CheckinBooking() {
+const CheckinBooking = () => {
   const { settings, isLoadingSettings } = useSettings();
   const [addBreakfast, setAddBreakfast] = useState(false);
   const [confirmPayment, setConfirmPayment] = useState(false);
@@ -116,6 +116,6 @@ function CheckinBooking() {
       </ButtonGroup>
     </>
   );
-}
+};
 
 export default CheckinBooking;

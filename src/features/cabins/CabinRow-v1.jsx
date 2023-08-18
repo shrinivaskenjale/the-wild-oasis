@@ -9,7 +9,7 @@ import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 
-function CabinRow({ cabin }) {
+const CabinRow = ({ cabin }) => {
   const {
     image,
     name,
@@ -22,7 +22,7 @@ function CabinRow({ cabin }) {
   const { deleteCabin, isDeleting } = useDeleteCabin();
   const { isCreating, createCabin } = useCreateCabin();
 
-  function handleDuplicate() {
+  const handleDuplicate = () => {
     createCabin({
       name: `Copy of ${name}`,
       maxCapacity,
@@ -31,7 +31,7 @@ function CabinRow({ cabin }) {
       image,
       description,
     });
-  }
+  };
 
   return (
     <Table.Row className={styles.cabinRow}>
@@ -89,6 +89,6 @@ function CabinRow({ cabin }) {
       </div>
     </Table.Row>
   );
-}
+};
 
 export default CabinRow;

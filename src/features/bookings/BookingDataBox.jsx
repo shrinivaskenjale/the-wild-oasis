@@ -13,7 +13,7 @@ import Flag from "../../ui/Flag";
 import { formatDistanceFromNow, formatCurrency } from "../../utils/helpers";
 
 // A purely presentational component
-function BookingDataBox({ booking }) {
+const BookingDataBox = ({ booking }) => {
   const {
     created_at,
     startDate,
@@ -93,6 +93,6 @@ function BookingDataBox({ booking }) {
       </footer>
     </section>
   );
-}
+};
 
 export default BookingDataBox;

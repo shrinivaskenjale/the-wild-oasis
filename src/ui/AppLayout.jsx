@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 import styles from "./AppLayout.module.css";
 
-function AppLayout() {
+const AppLayout = () => {
   return (
     <div className={styles.appLayout}>
       <Header />
@@ -16,6 +16,6 @@ function AppLayout() {
       </Main>
     </div>
   );
-}
+};
 
 export default AppLayout;

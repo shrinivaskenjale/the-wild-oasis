@@ -9,7 +9,7 @@ import {
 import { NavLink } from "react-router-dom";
 import styles from "./MainNav.module.css";
 
-function MainNav() {
+const MainNav = () => {
   return (
     <nav className={styles.mainNav}>
       <ul>
@@ -46,6 +46,6 @@ function MainNav() {
       </ul>
     </nav>
   );
-}
+};
 
 export default MainNav;

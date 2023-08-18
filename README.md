@@ -2,6 +2,10 @@
 
 https://the-wild-oasis-eta.vercel.app/
 
+Use following credentials to log in:
+Email: **user@test.com**
+password: **test1234**
+
 # Description
 
 Internal hotel management application

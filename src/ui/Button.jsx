@@ -1,6 +1,11 @@
 import styles from "./Button.module.css";
 
-function Button({ children, variation = "primary", size = "medium", ...rest }) {
+const Button = ({
+  children,
+  variation = "primary",
+  size = "medium",
+  ...rest
+}) => {
   return (
     <button
       {...rest}
@@ -9,6 +14,6 @@ function Button({ children, variation = "primary", size = "medium", ...rest }) {
       {children}
     </button>
   );
-}
+};
 
 export default Button;

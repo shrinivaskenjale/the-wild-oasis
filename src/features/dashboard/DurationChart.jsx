@@ -96,12 +96,12 @@ const startDataDark = [
   },
 ];
 
-function prepareData(startData, stays) {
-  function incArrayValue(arr, field) {
+const prepareData = (startData, stays) => {
+  const incArrayValue = (arr, field) => {
     return arr.map((obj) =>
       obj.duration === field ? { ...obj, value: obj.value + 1 } : obj
     );
-  }
+  };
 
   const data = stays
     .reduce((arr, cur) => {
@@ -119,13 +119,12 @@ function prepareData(startData, stays) {
     .filter((obj) => obj.value > 0);
 
   return data;
-}
+};
 
 const DurationChart = ({ confirmedStays }) => {
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
-  console.log(data);
   return (
     <div className={styles.chartBox}>
       <Heading type="h2">Stay duration summary</Heading>

@@ -6,7 +6,7 @@ import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const MenusContext = createContext();
 
-function Menus({ children }) {
+const Menus = ({ children }) => {
   const [openId, setOpenId] = useState("");
   const [position, setPosition] = useState();
 
@@ -20,16 +20,16 @@ function Menus({ children }) {
       <div>{children}</div>
     </MenusContext.Provider>
   );
-}
+};
 
-function Menu({ children }) {
-  return children;
-}
+const Menu = ({ children }) => {
+  return <div className={styles.menu}>{children}</div>;
+};
 
-function Toggle({ id }) {
+const Toggle = ({ id }) => {
   const { openId, open, close, setPosition } = useContext(MenusContext);
 
-  function handleToggleMenu(e) {
+  const handleToggleMenu = (e) => {
     // Stop event bubbling to avoid closing of the menu.
     e.stopPropagation();
 
@@ -46,14 +46,14 @@ function Toggle({ id }) {
       return open(id);
     }
     close();
-  }
+  };
   return (
     <button className={styles.toggleBtn} onClick={handleToggleMenu}>
       <HiEllipsisVertical />
     </button>
   );
-}
-function List({ id, children }) {
+};
+const List = ({ id, children }) => {
   const { openId, position, close } = useContext(MenusContext);
   const ref = useOutsideClick(close, false);
 
@@ -69,17 +69,17 @@ function List({ id, children }) {
     </ul>,
     document.body
   );
-}
+};
 
-function Button({ children, icon, onClick, ...rest }) {
+const Button = ({ children, icon, onClick, ...rest }) => {
   const { close } = useContext(MenusContext);
 
-  function handleClick() {
+  const handleClick = () => {
     // Execute onClick handler if present
     onClick?.();
     // Close menu upon clicking the menu button
     close();
-  }
+  };
   return (
     <li>
       <button className={styles.btn} onClick={handleClick} {...rest}>
@@ -87,7 +87,7 @@ function Button({ children, icon, onClick, ...rest }) {
       </button>
     </li>
   );
-}
+};
 
 Menus.Menu = Menu;
 Menus.Toggle = Toggle;

@@ -4,19 +4,19 @@ import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
 
-function Table({ children }) {
+const Table = ({ children }) => {
   return (
     <div className={styles.table} role="table">
       {children}
     </div>
   );
-}
+};
 
-function TableHeader({ children }) {
+const TableHeader = ({ children }) => {
   return <div className={styles.tableHeader}>{children}</div>;
-}
+};
 
-function CabinTable() {
+const CabinTable = () => {
   const { cabins, isLoading } = useCabins();
 
   if (isLoading) {
@@ -38,6 +38,6 @@ function CabinTable() {
       ))}
     </Table>
   );
-}
+};
 
 export default CabinTable;

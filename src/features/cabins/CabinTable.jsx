@@ -6,7 +6,7 @@ import Menus from "../../ui/Menus";
 import { useSearchParams } from "react-router-dom";
 import Empty from "../../ui/Empty";
 
-function CabinTable() {
+const CabinTable = () => {
   const { cabins, isLoading } = useCabins();
   const [searchParams] = useSearchParams();
 
@@ -55,6 +55,6 @@ function CabinTable() {
       </Table>
     </Menus>
   );
-}
+};
 
 export default CabinTable;

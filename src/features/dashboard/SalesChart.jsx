@@ -13,6 +13,7 @@ import {
 import { useDarkMode } from "../../hooks/useDarkMode";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
 
+/*
 const fakeData = [
   { label: "Jan 09", totalSales: 480, extrasSales: 20 },
   { label: "Jan 10", totalSales: 580, extrasSales: 100 },
@@ -44,6 +45,7 @@ const fakeData = [
   { label: "Feb 05", totalSales: 1400, extrasSales: 600 },
   { label: "Feb 06", totalSales: 1450, extrasSales: 400 },
 ];
+*/
 
 const SalesChart = ({ bookings, dayCount }) => {
   const { isDarkMode } = useDarkMode();

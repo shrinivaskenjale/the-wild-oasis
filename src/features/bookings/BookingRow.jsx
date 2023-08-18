@@ -16,7 +16,7 @@ import { useCheckout } from "../check-in-out/useCheckout";
 import styles from "./BookingRow.module.css";
 import { useDeleteBooking } from "./useDeleteBooking";
 
-function BookingRow({
+const BookingRow = ({
   booking: {
     id: bookingId,
     // created_at,
@@ -29,7 +29,7 @@ function BookingRow({
     guests: { fullName: guestName, email },
     cabins: { name: cabinName },
   },
-}) {
+}) => {
   const navigate = useNavigate();
   const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
@@ -107,6 +107,6 @@ function BookingRow({
       </Menus.Menu>
     </Table.Row>
   );
-}
+};
 
 export default BookingRow;

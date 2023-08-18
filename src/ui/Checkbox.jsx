@@ -1,6 +1,6 @@
 import styles from "./Checkbox.module.css";
 
-function Checkbox({ checked, onChange, disabled = false, id, children }) {
+const Checkbox = ({ checked, onChange, disabled = false, id, children }) => {
   return (
     <div className={styles.checkBox}>
       <input
@@ -13,6 +13,6 @@ function Checkbox({ checked, onChange, disabled = false, id, children }) {
       <label htmlFor={!disabled ? id : ""}>{children}</label>
     </div>
   );
-}
+};
 
 export default Checkbox;

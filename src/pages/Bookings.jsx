@@ -3,7 +3,7 @@ import BookingTableOperations from "../features/bookings/BookingTableOperations"
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 
-function Bookings() {
+const Bookings = () => {
   return (
     <>
       <Row>
@@ -13,6 +13,6 @@ function Bookings() {
       <BookingTable />
     </>
   );
-}
+};
 
 export default Bookings;

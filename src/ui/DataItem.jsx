@@ -1,6 +1,6 @@
 import styles from "./DataItem.module.css";
 
-function DataItem({ icon, label, children }) {
+const DataItem = ({ icon, label, children }) => {
   return (
     <div className={styles.dataItem}>
       <span className={styles.label}>
@@ -10,6 +10,6 @@ function DataItem({ icon, label, children }) {
       {children}
     </div>
   );
-}
+};
 
 export default DataItem;

@@ -21,7 +21,7 @@ import Modal from "../../ui/Modal";
 //   );
 // }
 
-function AddCabin() {
+const AddCabin = () => {
   return (
     <div>
       <Modal>
@@ -34,6 +34,6 @@ function AddCabin() {
       </Modal>
     </div>
   );
-}
+};
 
 export default AddCabin;

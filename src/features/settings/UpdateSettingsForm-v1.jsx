@@ -6,7 +6,7 @@ import styles from "../../ui/Form.module.css";
 import { useSettings } from "./useSettings";
 import { useUpdateSetting } from "./useUpdateSetting";
 
-function UpdateSettingsForm() {
+const UpdateSettingsForm = () => {
   const {
     settings: {
       minBookingLength,
@@ -21,12 +21,12 @@ function UpdateSettingsForm() {
   // return <Spinner />;
   if (isLoading) return <Spinner />;
 
-  function handleBlur(e, field) {
+  const handleBlur = (e, field) => {
     const { value } = e.target;
 
     if (!value) return;
     updateSetting({ [field]: value });
-  }
+  };
 
   // This time we are using UNCONTROLLED fields, so we will NOT store state
   return (
@@ -78,6 +78,6 @@ function UpdateSettingsForm() {
       </FormRow>
     </Form>
   );
-}
+};
 
 export default UpdateSettingsForm;

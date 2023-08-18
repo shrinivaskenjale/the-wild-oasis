@@ -8,7 +8,7 @@ import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";
 import FormRow from "../../ui/FormRow";
 
-function CreateCabinForm({ cabinToEdit = {}, onClose }) {
+const CreateCabinForm = ({ cabinToEdit = {}, onClose }) => {
   const { id: editId, ...editValues } = cabinToEdit;
   const isEditSession = Boolean(editId);
   const { register, handleSubmit, reset, getValues, formState } = useForm({
@@ -21,8 +21,7 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
 
   const isWorking = isCreating || isEditing;
 
-  function onSubmit(data) {
-    // console.log(data)
+  const onSubmit = (data) => {
     const image = typeof data.image === "string" ? data.image : data.image[0];
     if (isEditSession) {
       editCabin(
@@ -46,11 +45,11 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
         }
       );
     }
-  }
+  };
 
-  function onError(errors) {
+  const onError = (errors) => {
     console.log(errors);
-  }
+  };
 
   return (
     <Form
@@ -174,6 +173,6 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
       </FormRow>
     </Form>
   );
-}
+};
 
 export default CreateCabinForm;

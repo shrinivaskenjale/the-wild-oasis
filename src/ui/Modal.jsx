@@ -6,7 +6,7 @@ import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const ModalContext = createContext();
 
-function Modal({ children }) {
+const Modal = ({ children }) => {
   const [openName, setOpenName] = useState("");
 
   const close = () => setOpenName("");
@@ -18,15 +18,15 @@ function Modal({ children }) {
       {children}
     </ModalContext.Provider>
   );
-}
+};
 
-function Open({ children, opens }) {
+const Open = ({ children, opens }) => {
   const { open } = useContext(ModalContext);
   // We want to add onClick prop to button which is the children prop of <Open>
   return cloneElement(children, { onClick: () => open(opens) });
-}
+};
 
-function Window({ children, name }) {
+const Window = ({ children, name }) => {
   const { openName, close } = useContext(ModalContext);
 
   const ref = useOutsideClick(close);
@@ -44,7 +44,7 @@ function Window({ children, name }) {
     </div>,
     document.body
   );
-}
+};
 
 Modal.Open = Open;
 Modal.Window = Window;

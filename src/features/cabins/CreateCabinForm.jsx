@@ -10,7 +10,7 @@ import Input from "../../ui/Input";
 import Textarea from "../../ui/Textarea";
 import FileInput from "../../ui/FileInput";
 
-function CreateCabinForm({ cabinToEdit = {}, onClose }) {
+const CreateCabinForm = ({ cabinToEdit = {}, onClose }) => {
   const { id: editId, ...editValues } = cabinToEdit;
   const isEditSession = Boolean(editId);
   const { register, handleSubmit, reset, getValues, formState } = useForm({
@@ -23,8 +23,7 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
 
   const isWorking = isCreating || isEditing;
 
-  function onSubmit(data) {
-    // console.log(data)
+  const onSubmit = (data) => {
     const image = typeof data.image === "string" ? data.image : data.image[0];
     if (isEditSession) {
       editCabin(
@@ -48,15 +47,17 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
         }
       );
     }
-  }
+  };
 
-  function onError(errors) {
+  const onError = (errors) => {
     console.log(errors);
-  }
+  };
 
   return (
     <Form
       onSubmit={handleSubmit(onSubmit, onError)}
+      // We want to style the form differently if it is shown in modal.
+      // If component receives onClose prop, form is shown in the modal.
       type={onClose ? "modal" : "regular"}
     >
       <FormRow label="Cabin name" error={errors?.name?.message}>
@@ -131,6 +132,7 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
           id="image"
           accept="image/*"
           {...register("image", {
+            // Image is not required if editing the cabin
             required: isEditSession ? false : "This field is required",
           })}
         />
@@ -146,6 +148,6 @@ function CreateCabinForm({ cabinToEdit = {}, onClose }) {
       </FormRow>
     </Form>
   );
-}
+};
 
 export default CreateCabinForm;

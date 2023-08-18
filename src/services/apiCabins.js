@@ -1,6 +1,6 @@
 import supabase, { supabaseUrl } from "./supabase";
 
-export async function getCabins() {
+export const getCabins = async () => {
   let { data: cabins, error } = await supabase
     .from("cabins")
     .select("*")
@@ -12,12 +12,13 @@ export async function getCabins() {
   }
 
   return cabins;
-}
+};
 
 // If creating new cabin don't pass second param.
 // If editing pass id of the cabin as second param.
-export async function createEditCabin(newCabin, id) {
+export const createEditCabin = async (newCabin, id) => {
   const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl);
+  // If there is "/"" in the image name, supabase creates subfolder inside storage bucket. Therefore, remove "/".
   const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
     "/",
     ""
@@ -48,7 +49,7 @@ export async function createEditCabin(newCabin, id) {
     .from("cabin-images")
     .upload(imageName, newCabin.image);
 
-  // 3. If there was problem uploading the image, delete corresponding record from DB.
+  // 3. If there was problem uploading the image, delete corresponding record from cabins table.
   if (storageError) {
     await supabase.from("cabins").delete().eq("id", data.id);
     console.error(storageError);
@@ -56,9 +57,9 @@ export async function createEditCabin(newCabin, id) {
   }
 
   return data;
-}
+};
 
-export async function deleteCabin(id) {
+export const deleteCabin = async (id) => {
   const { error, data } = await supabase.from("cabins").delete().eq("id", id);
 
   if (error) {
@@ -67,6 +68,6 @@ export async function deleteCabin(id) {
   }
 
   return data;
-}
+};
 
 // https://dutduonmyxkrrtlmciul.supabase.co/storage/v1/object/public/cabin-images/cabin-001.jpg

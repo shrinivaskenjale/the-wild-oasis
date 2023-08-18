@@ -2,8 +2,7 @@ import Button from "./Button";
 import styles from "./ErrorFallback.module.css";
 import Heading from "./Heading";
 
-const ErrorFallback = ({ error, resetErrorBoundary }) => {
-  console.log("🥹🙂➡️#️⃣😅🤣");
+const ErrorBoundaryFallback = ({ error, resetErrorBoundary }) => {
   return (
     <main className={styles.errorFallback}>
       <div className={styles.box}>
@@ -17,4 +16,4 @@ const ErrorFallback = ({ error, resetErrorBoundary }) => {
   );
 };
 
-export default ErrorFallback;
+export default ErrorBoundaryFallback;

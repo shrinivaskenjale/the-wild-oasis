@@ -20,6 +20,8 @@ import ProtectedRoute from "./ui/ProtectedRoute";
 import DarkModeProvider from "./contexts/DarkModeContext";
 import ErrorFallback from "./ui/ErrorFallback";
 import Toast from "./ui/Toast";
+// import { ErrorBoundary } from "react-error-boundary";
+// import ErrorBoundaryFallback from "./ui/ErrorBoundaryFallback";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -88,7 +90,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
+const App = () => {
   return (
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
@@ -98,6 +100,6 @@ function App() {
       </QueryClientProvider>
     </DarkModeProvider>
   );
-}
+};
 
 export default App;

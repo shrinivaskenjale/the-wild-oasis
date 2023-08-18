@@ -6,7 +6,7 @@ import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
 
-function LoginForm() {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, isLoading } = useLogin();
@@ -55,6 +55,6 @@ function LoginForm() {
       </FormRowVertical>
     </Form>
   );
-}
+};
 
 export default LoginForm;

@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import MainNav from "./MainNav";
 import styles from "./Sidebar.module.css";
 
-function Sidebar() {
+const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <Logo />
@@ -11,6 +11,6 @@ function Sidebar() {
       {/* <Uploader /> */}
     </aside>
   );
-}
+};
 
 export default Sidebar;

@@ -3,7 +3,7 @@ import styles from "./Table.module.css";
 
 const TableContext = createContext();
 
-function Table({ columns, children }) {
+const Table = ({ columns, children }) => {
   return (
     <TableContext.Provider value={{ columns }}>
       <div className={styles.table} role="table">
@@ -11,9 +11,9 @@ function Table({ columns, children }) {
       </div>
     </TableContext.Provider>
   );
-}
+};
 
-function Header({ children }) {
+const Header = ({ children }) => {
   const { columns } = useContext(TableContext);
   return (
     <header
@@ -24,32 +24,36 @@ function Header({ children }) {
       {children}
     </header>
   );
-}
-function Row({ children }) {
+};
+
+const Row = ({ children, className }) => {
   const { columns } = useContext(TableContext);
 
   return (
     <div
-      className={`${styles.commonRow} ${styles.tableRow}`}
+      className={`${styles.commonRow} ${styles.tableRow} ${className}`}
       style={{ gridTemplateColumns: columns }}
       role="row"
     >
       {children}
     </div>
   );
-}
-function Body({ data, render }) {
+};
+
+const Body = ({ data, render }) => {
   if (!data.length) {
     return <EmptyTable>There is no data to show at the moment</EmptyTable>;
   }
   return <section className={styles.tableBody}>{data.map(render)}</section>;
-}
-function Footer({ children }) {
+};
+
+const Footer = ({ children }) => {
   return <footer className={styles.tableFooter}>{children}</footer>;
-}
-function EmptyTable({ children }) {
+};
+
+const EmptyTable = ({ children }) => {
   return <p className={styles.emptyTable}>{children}</p>;
-}
+};
 
 Table.Header = Header;
 Table.Body = Body;

@@ -1,6 +1,6 @@
 import styles from "./FormRowVertical.module.css";
 
-function FormRowVertical({ label, error, children }) {
+const FormRowVertical = ({ label, error, children }) => {
   return (
     <div className={styles.formRow}>
       {label && (
@@ -12,6 +12,6 @@ function FormRowVertical({ label, error, children }) {
       {error && <span className={styles.error}>{error}</span>}
     </div>
   );
-}
+};
 
 export default FormRowVertical;

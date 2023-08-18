@@ -1,6 +1,6 @@
 import styles from "./Stat.module.css";
 
-function Stat({ icon, title, value, color }) {
+const Stat = ({ icon, title, value, color }) => {
   return (
     <div className={styles.stat}>
       <div
@@ -16,6 +16,6 @@ function Stat({ icon, title, value, color }) {
       <p className={styles.value}>{value}</p>
     </div>
   );
-}
+};
 
 export default Stat;

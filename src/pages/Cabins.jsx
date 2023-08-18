@@ -4,7 +4,7 @@ import CabinTableOperations from "../features/cabins/CabinTableOperations";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 
-function Cabins() {
+const Cabins = () => {
   return (
     <>
       <Row>
@@ -17,6 +17,6 @@ function Cabins() {
       </Row>
     </>
   );
-}
+};
 
 export default Cabins;

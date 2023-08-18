@@ -24,7 +24,7 @@ const HeadingGroup = ({ children, ...rest }) => {
   );
 };
 
-function BookingDetail() {
+const BookingDetail = () => {
   const navigate = useNavigate();
   const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
@@ -91,6 +91,6 @@ function BookingDetail() {
       </ButtonGroup>
     </>
   );
-}
+};
 
 export default BookingDetail;

@@ -53,7 +53,7 @@ const Button = styled.button`
 //   }
 // `;
 
-function Modal({ children, onClose }) {
+const Modal = ({ children, onClose }) => {
   return createPortal(
     <div className={styles.backdrop}>
       <div className={styles.modal}>
@@ -65,6 +65,6 @@ function Modal({ children, onClose }) {
     </div>,
     document.body
   );
-}
+};
 
 export default Modal;

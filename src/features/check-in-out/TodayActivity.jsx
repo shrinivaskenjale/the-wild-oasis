@@ -6,13 +6,7 @@ import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
 
-// const StyledToday = styled.div``;
-
-// const TodayList = styled.ul``;
-
-// const NoActivity = styled.p``;
-
-function TodayActivity() {
+const TodayActivity = () => {
   const { activities, isLoading } = useTodayActivity();
   return (
     <div className={styles.today}>
@@ -34,6 +28,6 @@ function TodayActivity() {
       )}
     </div>
   );
-}
+};
 
 export default TodayActivity;
